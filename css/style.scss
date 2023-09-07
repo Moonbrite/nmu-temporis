@@ -33,6 +33,9 @@ a {
 
 header {
     background: $color-background;
+    position: fixed;
+    z-index: 900;
+    width: 100%;
     nav {
         display: flex;
         align-items: center;
