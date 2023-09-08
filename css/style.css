@@ -35,7 +35,6 @@ header {
 }
 header nav {
   display: flex;
-  align-items: center;
   margin: auto;
   width: 100%;
 }
@@ -69,6 +68,24 @@ header nav div ul {
 }
 header nav div ul li {
   line-height: 15px;
+  position: relative;
+}
+header nav div ul li::before {
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, right 0.4s ease-in-out;
+  content: "";
+  left: 0px;
+  right: calc(100% + 6px);
+  bottom: -0.1875rem;
+  position: absolute;
+  background-color: #f8c500;
+  height: 0.125rem;
+  opacity: 0;
+  visibility: hidden;
+}
+header nav div ul li:hover::before {
+  right: 0px;
+  opacity: 1;
+  visibility: visible;
 }
 header nav div ul li:nth-of-type(2) {
   padding: 0 20px;
@@ -77,9 +94,29 @@ header nav div ul li:nth-of-type(2) {
   border-spacing: 5px;
   height: 15px;
 }
+header nav div ul li:nth-of-type(2)::before {
+  left: 19px;
+}
+header nav div ul li:nth-of-type(2):hover::before {
+  right: 19px;
+}
 header nav div .btn {
   border: 4px solid #f8c500;
   padding: 6px 12px;
+  position: relative;
 }
-
-/*# sourceMappingURL=style.css.map */
+header nav div .btn::after {
+  content: "";
+  transition: right 0.3s ease-in-out;
+  content: "";
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background-color: #f8c500;
+}
+header nav div .btn:hover::after {
+  right: 0%;
+}/*# sourceMappingURL=style.css.map */
